@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ballclub.Domain", "BallClub
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ballclub.Repositories", "BallClub.Repositories\Ballclub.Repositories.csproj", "{3E085E93-385A-462C-A676-CF5D78B09CAB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ballclub.Repository.MySQL", "BallClub.Repository.MySQL\Ballclub.Repository.MySQL.csproj", "{913CEB5B-6B5D-40D6-9844-64AE8355B0D5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{3E085E93-385A-462C-A676-CF5D78B09CAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E085E93-385A-462C-A676-CF5D78B09CAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E085E93-385A-462C-A676-CF5D78B09CAB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{913CEB5B-6B5D-40D6-9844-64AE8355B0D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{913CEB5B-6B5D-40D6-9844-64AE8355B0D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{913CEB5B-6B5D-40D6-9844-64AE8355B0D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{913CEB5B-6B5D-40D6-9844-64AE8355B0D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
