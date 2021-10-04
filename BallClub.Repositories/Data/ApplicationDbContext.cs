@@ -41,14 +41,14 @@ namespace BallClub.Repositories.Data
             modelBuilder.Entity<PlayerDTO>().HasKey(x => x.PlayerId).HasName("PK_Players");
 
             // Configure indexes
-            modelBuilder.Entity<SeasonDTO>().HasIndex(x => x.Name).HasDatabaseName("Idx_SeasonName");
+            //modelBuilder.Entity<SeasonDTO>().HasIndex(x => x.Name).HasDatabaseName("Idx_SeasonName");
 
-            modelBuilder.Entity<GameDTO>().HasIndex(x => x.SeasonId).HasDatabaseName("Idx_GameSeason");
-            modelBuilder.Entity<GameDTO>().HasIndex(x => x.Schedule).HasDatabaseName("Idx_GameSchedule");
-            modelBuilder.Entity<GameDTO>().HasIndex(x => x.GameId).HasDatabaseName("Idx_GameTeamId");
-            modelBuilder.Entity<TeamDTO>().HasIndex(x => x.Name).HasDatabaseName("Idx_TeamName");
-            modelBuilder.Entity<PlayerDTO>().HasIndex(x => x.FirstName).HasDatabaseName("Idx_FirstName");
-            modelBuilder.Entity<PlayerDTO>().HasIndex(x => x.LastName).HasDatabaseName("Idx_LastName");
+            //modelBuilder.Entity<GameDTO>().HasIndex(x => x.SeasonId).HasDatabaseName("Idx_GameSeason");
+            //modelBuilder.Entity<GameDTO>().HasIndex(x => x.Schedule).HasDatabaseName("Idx_GameSchedule");
+            //modelBuilder.Entity<GameDTO>().HasIndex(x => x.GameId).HasDatabaseName("Idx_GameTeamId");
+            //modelBuilder.Entity<TeamDTO>().HasIndex(x => x.Name).HasDatabaseName("Idx_TeamName");
+            //modelBuilder.Entity<PlayerDTO>().HasIndex(x => x.FirstName).HasDatabaseName("Idx_FirstName");
+            //modelBuilder.Entity<PlayerDTO>().HasIndex(x => x.LastName).HasDatabaseName("Idx_LastName");
 
 
             // Configure columns

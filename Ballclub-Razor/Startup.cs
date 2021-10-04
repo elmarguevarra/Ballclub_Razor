@@ -34,7 +34,7 @@ namespace Ballclub_Razor
         {
             string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
+                options.UseMySql(mySqlConnectionStr));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

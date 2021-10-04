@@ -41,14 +41,14 @@ namespace BallClub.Repositories.Data.Migrations
                     b.HasKey("GameId")
                         .HasName("PK_Games");
 
-                    b.HasIndex("GameId")
-                        .HasDatabaseName("Idx_GameTeamId");
+                    //b.HasIndex("GameId")
+                    //    .HasDatabaseName("Idx_GameTeamId");
 
-                    b.HasIndex("Schedule")
-                        .HasDatabaseName("Idx_GameSchedule");
+                    //b.HasIndex("Schedule")
+                    //    .HasDatabaseName("Idx_GameSchedule");
 
-                    b.HasIndex("SeasonId")
-                        .HasDatabaseName("Idx_GameSeason");
+                    //b.HasIndex("SeasonId")
+                    //    .HasDatabaseName("Idx_GameSeason");
 
                     b.ToTable("Games");
                 });
@@ -107,11 +107,11 @@ namespace BallClub.Repositories.Data.Migrations
                     b.HasKey("PlayerId")
                         .HasName("PK_Players");
 
-                    b.HasIndex("FirstName")
-                        .HasDatabaseName("Idx_FirstName");
+                    //b.HasIndex("FirstName")
+                    //    .HasDatabaseName("Idx_FirstName");
 
-                    b.HasIndex("LastName")
-                        .HasDatabaseName("Idx_LastName");
+                    //b.HasIndex("LastName")
+                    //    .HasDatabaseName("Idx_LastName");
 
                     b.ToTable("Players");
                 });
@@ -129,8 +129,8 @@ namespace BallClub.Repositories.Data.Migrations
                     b.HasKey("SeasonId")
                         .HasName("PK_Seasons");
 
-                    b.HasIndex("Name")
-                        .HasDatabaseName("Idx_SeasonName");
+                    //b.HasIndex("Name")
+                    //    .HasDatabaseName("Idx_SeasonName");
 
                     b.ToTable("Seasons");
                 });
@@ -148,8 +148,8 @@ namespace BallClub.Repositories.Data.Migrations
                     b.HasKey("TeamId")
                         .HasName("PK_Teams");
 
-                    b.HasIndex("Name")
-                        .HasDatabaseName("Idx_TeamName");
+                    //b.HasIndex("Name")
+                    //    .HasDatabaseName("Idx_TeamName");
 
                     b.ToTable("Teams");
                 });
