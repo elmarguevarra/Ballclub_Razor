@@ -14,10 +14,10 @@ namespace Ballclub_Razor.Pages
     {
         private readonly BallClub.Repositories.Data.ApplicationDbContext _context;
 
-        //public DetailsModel(BallClub.Repositories.Data.ApplicationDbContext context)
-        //{
-        //    _context = context;
-        //}
+        public DetailsModel(BallClub.Repositories.Data.ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
         public TeamDTO TeamDTO { get; set; }
 
