@@ -27,20 +27,15 @@ namespace Ballclub_Razor
         {
             services.AddRazorPages();
 
-            ConfigureDataBase(services);
+            //ConfigureDataBase(services);
         }
 
         private void ConfigureDataBase(IServiceCollection services)
         {
-            //string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
-            //services.AddDbContext<ApplicationDbContext>(options =>
-            //    options.UseMySql(mySqlConnectionStr));
-
             services.AddDbContext<ApplicationDbContext>(options => {
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
                 options.EnableDetailedErrors();
             });
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

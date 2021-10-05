@@ -14,10 +14,10 @@ namespace Ballclub_Razor.Pages
     {
         private readonly BallClub.Repositories.Data.ApplicationDbContext _context;
 
-        public DeleteModel(BallClub.Repositories.Data.ApplicationDbContext context)
-        {
-            _context = context;
-        }
+        //public DeleteModel(BallClub.Repositories.Data.ApplicationDbContext context)
+        //{
+        //    _context = context;
+        //}
 
         [BindProperty]
         public TeamDTO TeamDTO { get; set; }

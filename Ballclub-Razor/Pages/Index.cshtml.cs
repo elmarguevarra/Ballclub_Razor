@@ -14,16 +14,16 @@ namespace Ballclub_Razor.Pages
     {
         private readonly BallClub.Repositories.Data.ApplicationDbContext _context;
 
-        public IndexModel(BallClub.Repositories.Data.ApplicationDbContext context)
-        {
-            _context = context;
-        }
+        //public IndexModel(BallClub.Repositories.Data.ApplicationDbContext context)
+        //{
+        //    _context = context;
+        //}
 
         public IList<TeamDTO> TeamDTO { get;set; }
 
         public async Task OnGetAsync()
         {
-            TeamDTO = await _context.Teams.ToListAsync();
+            //TeamDTO = await _context.Teams.ToListAsync();
         }
     }
 }

@@ -14,10 +14,10 @@ namespace Ballclub_Razor.Pages
     {
         private readonly BallClub.Repositories.Data.ApplicationDbContext _context;
 
-        public CreateModel(BallClub.Repositories.Data.ApplicationDbContext context)
-        {
-            _context = context;
-        }
+        //public CreateModel(BallClub.Repositories.Data.ApplicationDbContext context)
+        //{
+        //    _context = context;
+        //}
 
         public IActionResult OnGet()
         {
