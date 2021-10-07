@@ -1,13 +1,13 @@
 ﻿using BallClub.Repositories.Messages;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace BallClub.Repositories.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUserDTO>
     {
         public string ConnectionString { get; set; }
 
@@ -118,6 +118,8 @@ namespace BallClub.Repositories.Data
             //modelBuilder.Entity<PlayerDTO>().HasOne<TeamDTO>().WithMany()
             //    .HasPrincipalKey(t => t.TeamId).HasForeignKey(p => p.TeamId)
             //    .OnDelete(DeleteBehavior.NoAction).HasConstraintName("FK_Players_Teams");
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

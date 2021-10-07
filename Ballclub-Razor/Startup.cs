@@ -2,6 +2,7 @@ using BallClub.Repositories.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,14 +33,12 @@ namespace Ballclub_Razor
 
         private void ConfigureDataBase(IServiceCollection services)
         {
-            //string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
-            //services.AddDbContext<ApplicationDbContext>(options =>
-            //    options.UseMySql(mySqlConnectionStr));
-
             services.AddDbContext<ApplicationDbContext>(options => {
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
                 options.EnableDetailedErrors();
             });
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<ApplicationDbContext>();
 
         }
 
