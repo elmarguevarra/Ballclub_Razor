@@ -1,4 +1,5 @@
 using BallClub.Repositories.Data;
+using BallClub.Repositories.Messages;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -37,7 +38,7 @@ namespace Ballclub_Razor
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
                 options.EnableDetailedErrors();
             });
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<ApplicationUserDTO>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
         }

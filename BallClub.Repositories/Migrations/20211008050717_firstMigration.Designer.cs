@@ -4,19 +4,21 @@ using BallClub.Repositories.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace BallClub.Repositories.Data.Migrations
+namespace Ballclub.Repositories.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211008050717_firstMigration")]
+    partial class firstMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.10");
+                .HasAnnotation("ProductVersion", "3.1.19")
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("BallClub.Repositories.Messages.GameDTO", b =>
                 {
@@ -25,7 +27,7 @@ namespace BallClub.Repositories.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("PlayerIds")
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime>("Schedule")
                         .HasColumnType("DateTime");
@@ -34,19 +36,10 @@ namespace BallClub.Repositories.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("TeamIds")
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("GameId")
                         .HasName("PK_Games");
-
-                    //b.HasIndex("GameId")
-                    //    .HasDatabaseName("Idx_GameTeamId");
-
-                    //b.HasIndex("Schedule")
-                    //    .HasDatabaseName("Idx_GameSchedule");
-
-                    //b.HasIndex("SeasonId")
-                    //    .HasDatabaseName("Idx_GameSeason");
 
                     b.ToTable("Games");
                 });
@@ -84,7 +77,7 @@ namespace BallClub.Repositories.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("SocialMediaLinks")
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("Steals")
                         .HasColumnType("int");
@@ -105,12 +98,6 @@ namespace BallClub.Repositories.Data.Migrations
                     b.HasKey("PlayerId")
                         .HasName("PK_Players");
 
-                    //b.HasIndex("FirstName")
-                    //    .HasDatabaseName("Idx_FirstName");
-
-                    //b.HasIndex("LastName")
-                    //    .HasDatabaseName("Idx_LastName");
-
                     b.ToTable("Players");
                 });
 
@@ -127,9 +114,6 @@ namespace BallClub.Repositories.Data.Migrations
                     b.HasKey("SeasonId")
                         .HasName("PK_Seasons");
 
-                    //b.HasIndex("Name")
-                    //    .HasDatabaseName("Idx_SeasonName");
-
                     b.ToTable("Seasons");
                 });
 
@@ -145,9 +129,6 @@ namespace BallClub.Repositories.Data.Migrations
 
                     b.HasKey("TeamId")
                         .HasName("PK_Teams");
-
-                    //b.HasIndex("Name")
-                    //    .HasDatabaseName("Idx_TeamName");
 
                     b.ToTable("Teams");
                 });

@@ -2,15 +2,12 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace BallClub.Repositories.Data.Migrations
+namespace Ballclub.Repositories.Migrations
 {
-    public partial class deployTablesToBallClubDb : Migration
+    public partial class firstMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterDatabase()
-                .Annotation("MySql:CharSet", "utf8mb4");
-
             migrationBuilder.CreateTable(
                 name: "Games",
                 columns: table => new
@@ -18,17 +15,14 @@ namespace BallClub.Repositories.Data.Migrations
                     GameId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Schedule = table.Column<DateTime>(type: "DateTime", nullable: false),
-                    TeamIds = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    PlayerIds = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    TeamIds = table.Column<string>(nullable: true),
+                    PlayerIds = table.Column<string>(nullable: true),
                     SeasonId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Games", x => x.GameId);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
 
             migrationBuilder.CreateTable(
                 name: "Players",
@@ -42,8 +36,7 @@ namespace BallClub.Repositories.Data.Migrations
                     MiddleName = table.Column<string>(type: "nvarchar(50)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(50)", nullable: true),
                     Suffix = table.Column<string>(type: "nvarchar(50)", nullable: true),
-                    SocialMediaLinks = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    SocialMediaLinks = table.Column<string>(nullable: true),
                     Points = table.Column<int>(type: "int", nullable: false),
                     Assists = table.Column<int>(type: "int", nullable: false),
                     Rebounds = table.Column<int>(type: "int", nullable: false),
@@ -55,8 +48,7 @@ namespace BallClub.Repositories.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Players", x => x.PlayerId);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
 
             migrationBuilder.CreateTable(
                 name: "Seasons",
@@ -69,8 +61,7 @@ namespace BallClub.Repositories.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Seasons", x => x.SeasonId);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
 
             migrationBuilder.CreateTable(
                 name: "Teams",
@@ -83,43 +74,7 @@ namespace BallClub.Repositories.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Teams", x => x.TeamId);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateIndex(
-                name: "Idx_GameSchedule",
-                table: "Games",
-                column: "Schedule");
-
-            migrationBuilder.CreateIndex(
-                name: "Idx_GameSeason",
-                table: "Games",
-                column: "SeasonId");
-
-            migrationBuilder.CreateIndex(
-                name: "Idx_GameTeamId",
-                table: "Games",
-                column: "GameId");
-
-            migrationBuilder.CreateIndex(
-                name: "Idx_FirstName",
-                table: "Players",
-                column: "FirstName");
-
-            migrationBuilder.CreateIndex(
-                name: "Idx_LastName",
-                table: "Players",
-                column: "LastName");
-
-            migrationBuilder.CreateIndex(
-                name: "Idx_SeasonName",
-                table: "Seasons",
-                column: "Name");
-
-            migrationBuilder.CreateIndex(
-                name: "Idx_TeamName",
-                table: "Teams",
-                column: "Name");
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
