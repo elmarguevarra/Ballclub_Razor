@@ -12,18 +12,18 @@ namespace Ballclub_Razor.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly BallClub.Repositories.Data.ApplicationDbContext _context;
+        //private readonly BallClub.Repositories.Data.ApplicationDbContext _context;
 
-        public IndexModel(BallClub.Repositories.Data.ApplicationDbContext context)
-        {
-            _context = context;
-        }
+        //public IndexModel(BallClub.Repositories.Data.ApplicationDbContext context)
+        //{
+        //    _context = context;
+        //}
 
-        public IList<TeamDTO> TeamDTO { get;set; }
+        //public IList<TeamDTO> TeamDTO { get;set; }
 
-        public async Task OnGetAsync()
-        {
-            TeamDTO = await _context.Teams.ToListAsync();
-        }
+        //public async Task OnGetAsync()
+        //{
+        //    TeamDTO = await _context.Teams.ToListAsync();
+        //}
     }
 }

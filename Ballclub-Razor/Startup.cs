@@ -63,6 +63,7 @@ namespace Ballclub_Razor
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

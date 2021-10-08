@@ -2,35 +2,7 @@
 @model Ballclub_Razor.Pages.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Home";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TeamDTO[0].Name)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.TeamDTO) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.TeamId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.TeamId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.TeamId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<h1>Bawal unggoy</h1>
