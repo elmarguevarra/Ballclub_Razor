@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using BallClub.Repositories.Data;
 using BallClub.Repositories.Messages;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Ballclub_Razor.Pages
 {
+    [Authorize]
     public class TeamsModel : PageModel
     {
         private readonly BallClub.Repositories.Data.ApplicationDbContext _context;
